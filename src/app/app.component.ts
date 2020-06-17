@@ -34,6 +34,5 @@ export class AppComponent implements OnInit{
       }
       );
       }
-    ) // hier de haakjes nog eens checken er zit weer wat fout
   }
 
