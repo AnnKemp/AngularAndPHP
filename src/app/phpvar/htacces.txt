@@ -1,0 +1,17 @@
+// in map met de php-bestanden moet ook nog een .htacces bestand aangemaakt worden dat na aanmaak onzichtbaar is en http-headers regelt.
+// Hetgeen dat in dit geval om gewoon 'local' (zet dit zo niet op een server want die is in de korste keren gekraakt) te werken er op moet staan is het volgende:
+
+#Remove the php extension from the filename
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+#Set the headers for the restful api
+Header always set Acces-Control-Allow-Origin http://localhost:4200
+Header always set Acces-Control-Max-Age "1000"
+Header always set Acces-Control-Allow-Headers "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+Header always set Acces-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+
+
+// hier vond ik al wat meer info: https://my.justhost.com/hosting/help/htaccess
+// En hier staat dus alles maar super onduidelijk: http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewriterule

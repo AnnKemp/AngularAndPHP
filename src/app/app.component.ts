@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Car } from './car';
-import { CarService} from "./car.service";
+import { CarService } from "./car.service";
 // the php pages you can find in: var/www/api
 
 @Component({
