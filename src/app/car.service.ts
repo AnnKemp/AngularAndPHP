@@ -12,6 +12,9 @@ import { Car } from './car';
   providedIn: 'root'
 })
 export class CarService { // when developing with Angular it is strongly advised to use the Dependency Injection system to manage the objects that the class needs.
+  baseUrl='http://localhost/api';
+  cars: Car[];
+
   constructor(private http: HttpClient) { // the dependency injection is done in the constructor, by defining the private http var as beloning to the HttpClient type, which instructs Angular to handle the creation of the HttpClient object for us by using the dependency injection.
 
  // Importing from the RxJS library allows us to work with the Observable that Angular wraps around the data that is coming from the server. Using an Observable instead of a standard callback to handle asynchornous code offers serveral advantages, including multiple operators that facilitate data handling, as well as the ability to listen to data that the server emits repeatedly over time.

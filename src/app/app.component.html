@@ -1,9 +1,13 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="succes">{{ succes }}</div>
+  <div id="theList">
+    <h2>The List</h2>
+    <ul>
+      <li *ngFor="let item of cars">{{ item.mode }}|{{ item.price }}</li>
+    </ul>
+  </div>
 </div>
-<div class="content" role="main">
-</div>
-<!-- Footer -->
-<footer>
-</footer>
+
 <router-outlet></router-outlet>
